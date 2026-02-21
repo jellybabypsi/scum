@@ -1,3 +1,6 @@
+<off>  
+shred -n 5 -vz /dev/sdb  
+git clone https://github.com/sophos/SOREL-20M
 <off>
 git clone https://github.com/Endermanch/MalwareDatabase
 <off>
