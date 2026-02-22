@@ -1,0 +1,40 @@
+
+
+#!/usr/bin/env bash
+
+elect_spark() {
+  local pattern="$1"
+
+  local all
+  all=$(pgrep -f "$pattern") || return 0
+
+  local spark
+  spark=$(pgrep -fo "$pattern")
+
+  echo "$all" \
+    | grep -v "$spark" \
+    | xargs -r kill -TERM
+
+  echo "[✓] Spark elected for '$pattern' — duplicates terminated."
+}
+
+# --- Spark Council: list all daemons here ---
+DAEMONS=(
+  "1. Pain"
+  "2. DontTrip"
+  "inconverient" 
+  "music"
+  "push"
+  "admin"
+  
+
+echo "⚡ Convening the Spark Council..."
+echo
+
+for daemon in "${DAEMONS[@]}"; do
+  echo "→ Electing spark for: $daemon"
+  elect_spark "$daemon"
+  echo
+done
+
+echo "✨ All sparks elected. The Council stands in harmony."
