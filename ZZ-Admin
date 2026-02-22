@@ -25,7 +25,8 @@ DAEMONS=(
   "inconverient" 
   "music"
   "push"
-  "admin"
+  "ZZ-Admin"
+  "bags"
   
 
 echo "⚡ Convening the Spark Council..."
