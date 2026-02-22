@@ -1,1 +1,0 @@
-pgrep -f 'music' | grep -v "$(pgrep -fo 'music')" | xargs -r kill -TERM && echo "[✓] Canonical Spark 
